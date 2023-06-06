@@ -1,0 +1,18 @@
+:root{
+    --Poppins: 'Poppins', sans-serif;
+    
+    --font-size-sm: 0.8rem;
+    --font-weight-light: 300;
+
+    --black: #0D1821;
+    --blue: #344966;
+    --red: #FF331F;
+    --green: #05AD52;
+    --white: #FFFFFF;
+
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+}

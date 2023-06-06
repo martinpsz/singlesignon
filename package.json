@@ -1,0 +1,23 @@
+{
+  "name": "singlesignonui",
+  "version": "1.0.0",
+  "description": "Single sign on UI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "web-test-runner src/test/**/*.test.js --node-resolve",
+    "test:watch": "web-test-runner src/test/**/*.test.js --node-resolve --watch"
+  },
+  "author": "Martin Pszczola",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
+  }
+}

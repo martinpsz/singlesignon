@@ -1,60 +1,48 @@
-import { LitElement, html, css } from "lit"; 
+import { LitElement, html, css, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement('afscme-logo')
 export class AFSCMELogo extends LitElement{
-    /**
-     * Properties: 
-     *  
-     *      - logo_source: Link to logo in local file system.
-     *      - logo_alt: Alternative text that will be passed to image alt property
-     *      - logo_byline: Text to appear under the logo. 
-     */
 
     static styles = css`
         :host{
-            display: flex;
+            display: inline-flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 1em;
+            padding: 1em 0;
         }
-        
-        
         img{
-            height: 80px;
+            height: clamp(5rem, 4.286rem + 3.571vw, 7.5rem)
         }
 
         span{
-            font-family: var(--Poppins);
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-light);
-            text-transform: uppercase;
+            font-size: clamp(0.75rem, 0.679rem + 0.357vw, 1rem)
             color: var(--blue);
+            font-family: var(--Poppins);
+            text-transform: uppercase;
+            font-weight: 300;
         }
-    
     `
 
     @property()
-    logo_path!: string;
+    imgSrc!: string;
 
     @property()
-    logo_alt!: string;
+    imgAlt!: string;
 
     @property()
-    logo_byline!: string;
-
+    logoText?: string;
 
     protected render(){
         return html`
-            <img src=${this.logo_path} 
-                 alt=${this.logo_alt}>
-            <span>${this.logo_byline}</span>
+            <img src=${this.imgSrc} alt=${this.imgAlt}/>
+            ${this.logoText ? html`<span>${this.logoText}</span>` : nothing}
         `
     }
-} 
+}
 
 declare global {
     interface HTMLElementTagNameMap {
-        "afscme-logo": AFSCMELogo;
+      "afscme-logo": AFSCMELogo;
     }
-}
+  }

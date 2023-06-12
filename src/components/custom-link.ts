@@ -26,7 +26,7 @@ export class CustomLink extends LitElement{
     linkText!: string;
 
     @property()
-    linkType!: Link;
+    linkType: Link = 'navigation';
 
     protected render(){
         return html`<button class=${this.linkType === 'navigation' ? 'nav' : 'need-help'}>${this.linkText}</button>`

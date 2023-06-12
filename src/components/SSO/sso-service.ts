@@ -22,7 +22,7 @@ export class SSOService extends LitElement{
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.25em 0.5em;
+            padding: 1.5em 0.75em;
         }
 
         span{

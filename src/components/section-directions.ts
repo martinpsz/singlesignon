@@ -13,10 +13,10 @@ export class SectionDirections extends LitElement{
     `
 
     @property()
-    directionText!: string;
+    helpText!: string;
 
     protected render() {
-       return html`<p>${this.directionText}</p>` 
+       return html`<p>${this.helpText}</p>` 
 }}
 
 declare global {

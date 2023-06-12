@@ -43,3 +43,9 @@ export class CodeFields extends LitElement{
      */
     
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "code-fields": CodeFields;
+    }
+}

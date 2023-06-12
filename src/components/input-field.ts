@@ -76,3 +76,9 @@ export class InputField extends LitElement{
         `   
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "input-field": InputField;
+    }
+}

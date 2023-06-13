@@ -4,7 +4,8 @@ import Logo from './static/afscme.svg'
 import './components/afscme-logo.js'
 import './components/Screens/home-screen'
 import './components/Screens/email-login'
-
+import './components/Screens/create-account'
+import './components/Screens/confirmation-code'
 /**
  *  
  *
@@ -41,6 +42,7 @@ export class AFSCMESignin extends LitElement{
 
             .container{
                 border-radius: 0.25em;
+                width: 480px;
             }
 
         }
@@ -52,7 +54,7 @@ export class AFSCMESignin extends LitElement{
         return html`
             <div class="container">
                 <afscme-logo imgSrc=${Logo} imgAlt='AFSCME Logo' logoText='Member Portal'></afscme-logo>
-               <email-login></email-login>
+                <confirmation-code></confirmation-code>
             </div>
         `
     }

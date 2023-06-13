@@ -17,6 +17,16 @@ export class CustomButton extends LitElement{
             color: var(--white);
             text-transform: uppercase;
             line-height: 1;
+            -webkit-box-shadow: 0px 2px 4px rgba(42,45,52,1);
+            -moz-box-shadow: 0px 2px 4px rgba(42,45,52,1);
+            box-shadow: 0px 2px 4px rgba(42,45,52,1);
+            cursor: pointer;
+        }
+
+        button:active{
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
         }
 
         #lt-icon{
@@ -42,7 +52,7 @@ export class CustomButton extends LitElement{
     `
     
     @property()
-    buttonText!: string;
+    buttonText?: string;
 
     @property()
     rightIcon!: string;

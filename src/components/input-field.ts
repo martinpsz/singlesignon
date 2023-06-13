@@ -42,14 +42,14 @@ export class InputField extends LitElement{
             position: relative;
         }
 
-        input:not(:focus):invalid + span:after{
+        input:focus:invalid + span:after{
             content: url('https://api.iconify.design/carbon/warning-alt.svg?color=%23ff331f&height=16');
             position: absolute;
             right: 0;
             bottom: 0;
         }
 
-        input:not(:focus):valid + span:after{
+        input:focus:valid + span:after{
             content: url('https://api.iconify.design/carbon/checkmark-outline.svg?color=%2305ad52&height=16');
             position: absolute;
             right: 0;
@@ -71,7 +71,7 @@ export class InputField extends LitElement{
 
     protected render(){
         return html`
-            <label for${this.inputId}>${this.fieldLabel}</label>
+            <label for=${this.inputId}>${this.fieldLabel}</label>
             <input name=${this.inputId} id=${this.inputId} type=${this.inputType}/><span></span>
         `   
     }

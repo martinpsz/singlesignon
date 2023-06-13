@@ -9,7 +9,8 @@ export class AFSCMELogo extends LitElement{
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            padding: 1em 0;
+            justify-content: center;
+            padding: 0.5em 0 0;
         }
         img{
             height: clamp(5rem, 4.286rem + 3.571vw, 7.5rem)
@@ -21,6 +22,10 @@ export class AFSCMELogo extends LitElement{
             font-family: var(--Poppins);
             text-transform: uppercase;
             font-weight: 300;
+        }
+
+        @media (min-width: 768px){
+            
         }
     `
 

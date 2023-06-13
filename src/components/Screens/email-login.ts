@@ -17,6 +17,10 @@ export class EmailLogin extends LitElement{
             align-items: center;
         }
 
+        section-directions{
+            margin-top: 1em;
+        }
+
         form{
             display: flex;
             flex-direction: column;
@@ -29,6 +33,7 @@ export class EmailLogin extends LitElement{
         form custom-link{
             align-self: flex-end;
             margin-top: 0.25em;
+            
         }
 
 

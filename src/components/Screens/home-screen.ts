@@ -36,7 +36,7 @@ export class HomeScreen extends LitElement{
 
         @media (min-width: 768px){
             :host{
-                padding: 2em 4em;
+                padding: 2em 0;
             }
 
             #non-sso-links{

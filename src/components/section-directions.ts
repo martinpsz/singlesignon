@@ -8,13 +8,13 @@ export class SectionDirections extends LitElement{
             font-family: var(--Poppins);
             color: var(--black);
             font-size: var(--font-size-sm);
-            margin-top: 2em;
+            margin-top: 1em;
         }
 
         @media (min-width: 768px){
             p{
                 max-width: 66.7%;
-                margin: 2em auto 0;
+                margin: 1em auto 0;
             }
         }
     

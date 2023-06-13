@@ -4,5 +4,8 @@
     },
     "EnterValidationCode": {
         "helpText": "Enter the member validation code you received"
+    },
+    "ConfirmWithMemberId": {
+        "helpText": "Enter your member id # and either the email or phone associated with your membership."
     }
 }

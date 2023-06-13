@@ -22,10 +22,11 @@ export class ConfirmationMemberId extends LitElement{
         }
 
         form input-field:nth-of-type(1), form input-field:nth-of-type(3){
-            margin: 1.5em 0 2em;
+            margin: 1.5em 0;
         }
 
         #btn-group{
+            margin: 0.5em 0;
             display: flex;
             justify-content: space-evenly;
             width: 100%;

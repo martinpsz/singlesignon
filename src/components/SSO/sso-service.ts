@@ -52,12 +52,20 @@ export class SSOService extends LitElement{
      */
     protected render() {
         return html`
-            <button @click=${() => console.log(`Connect me with ${this.serviceName}`)}>
+            <button @click=${this._setSSOSelection}>
                 <iconify-icon icon=${this.serviceLogo} class="icon" style=${this.serviceLogoEnlarged ? 
                 'font-size: 32px' : 'font-size: 24px'}></iconify-icon>
                 ${this.showServiceName ? html`<span>${this.serviceName}</span>` : nothing}
             </button>
         `
+    }
+
+    _setSSOSelection = () => {
+        this.dispatchEvent(new CustomEvent('get_SSO_selection', {
+            detail: this.serviceName.toUpperCase(),
+            bubbles: true,
+            composed: true
+        }))
     }
 }
 

@@ -1,7 +1,8 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, state} from "lit/decorators.js";
 import '../SSO/sso-list';
 import '../custom-link';
+import { SignInOptions } from "../../interfaces";
 
 @customElement('home-screen')
 export class HomeScreen extends LitElement{
@@ -51,20 +52,45 @@ export class HomeScreen extends LitElement{
 
         }
 
-    
     `
+
+    @state()
+    LogInOptionSelected!: SignInOptions;
+
+    
 
     protected render(){
         return html`
             <p>Sign in with:</p>
-            <sso-list showServiceNames></sso-list>
+            <sso-list showServiceNames @get_SSO_selection=${(e: CustomEvent) => this._getLogInSelection(e)}></sso-list>
             <div id='non-sso-links'>
-                <custom-link linkText='Login with email'></custom-link>
-                <custom-link linkText='Create an account'></custom-link>
+                <custom-link linkText='Login with email' @click=${(option: string)=>this._getLinkSelection(option = 'email')}></custom-link>
+                <custom-link linkText='Create an account' @click=${(option: string) => this._getLinkSelection(option = 'create an account')}></custom-link>
             </div>
-
         `
     }
+
+    _getLogInSelection = (e: CustomEvent) => {
+        this.LogInOptionSelected = e.detail;
+
+        this.dispatchEvent(new CustomEvent('get_login_option', {
+            detail: this.LogInOptionSelected,
+            bubbles: true,
+            composed: true
+        }))
+    }
+
+    _getLinkSelection = (option: string) => {
+        this.LogInOptionSelected = option.toUpperCase() as SignInOptions;
+
+        this.dispatchEvent(new CustomEvent('get_login_option', {
+            detail: this.LogInOptionSelected,
+            bubbles: true,
+            composed: true
+        }))
+    }
+
+    
 }
 
 declare global {

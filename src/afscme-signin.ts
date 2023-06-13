@@ -8,6 +8,7 @@ import './components/Screens/create-account'
 import './components/Screens/confirmation-code'
 import './components/Screens/confirmation-memberid'
 import './components/Screens/member-search'
+import './components/Screens/verification-options'
 
 
 
@@ -51,7 +52,7 @@ export class AFSCMESignin extends LitElement{
         return html`
             <div class="container">
                 <afscme-logo imgSrc=${Logo} imgAlt='AFSCME Logo' logoText='Member Portal'></afscme-logo>
-                <member-search></member-search>
+                <verification-options></verification-options>
             </div>
         `
     }

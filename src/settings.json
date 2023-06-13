@@ -10,5 +10,8 @@
     },
     "VerificationOpts": {
         "helpText": "We need to validate your AFSCME membership before we can proceed. Choose an option below:"
+    },
+    "ContactServicesSettings": {
+        "helpText": "We could not assert your membership status. Please contact membership services to confirm your membership status."
     }
 }

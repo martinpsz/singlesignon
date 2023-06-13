@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement} from "lit/decorators.js";
 import '../section-directions'
 import '../input-field'
 import '../custom-link'
@@ -9,10 +9,59 @@ import SignInWithEmail from '../../settings.json'
 
 @customElement('email-login')
 export class EmailLogin extends LitElement{
+    static styles = css`
+        :host{
+            padding: 0 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input-field:nth-of-type(1){
+            margin: 1.5em 0 2em;
+        }
+
+        form custom-link{
+            align-self: flex-end;
+            margin-top: 0.25em;
+        }
+
+
+        #btn-group{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2em 0 3em;
+        }
+        
+        @media (min-width: 768px){
+            :host{
+                padding: 1em;
+            }
+        }
+    
+    
+    `
+
     protected render(){
-        console.log(SignInWithEmail)
+        const helpText = SignInWithEmail.SignInWithEmail.helpText
         return html`
-            <section-directions helpText=${SignInWithEmail}></section-directions>
+            <section-directions helpText=${helpText}></section-directions>
+            <form>
+                <input-field fieldLabel='Email:' inputType='email' inputId='Email'></input-field>
+                <input-field fieldLabel='Password:' inputType='password' inputId='Password'></input-field>
+                <custom-link linkText='Forgot Password' linkType='need help'></custom-link>
+                <div id='btn-group'>
+                    <custom-button leftIcon='carbon:home' buttonText='Home' btnPrimary></custom-button>
+                    <custom-button rightIcon='carbon:login' buttonText='Sign In' btnSecondary></custom-button>
+                </div>
+            </form>
+            <custom-link linkText='Create an account'></custom-link>
         `
     }
 }

@@ -7,7 +7,7 @@ export class CustomButton extends LitElement{
 
     static styles = css`
         button{
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             font-family: var(--Poppins);
@@ -16,6 +16,7 @@ export class CustomButton extends LitElement{
             border-radius: 0.25em;
             color: var(--white);
             text-transform: uppercase;
+            line-height: 1;
         }
 
         #lt-icon{
@@ -66,8 +67,8 @@ export class CustomButton extends LitElement{
         return html`
             <button class=${classMap(classes)}>
                 ${this.leftIcon ? 
-                        html`<iconify-icon id='lt-icon' class="iconify-inline" icon=${this.leftIcon} style="font-size: 24px;" ></iconify-icon> ${this.buttonText}`:
-                        html`${this.buttonText} <iconify-icon id='rt-icon' class="iconify-inline" icon=${this.rightIcon} style="font-size: 24px;"></iconify-icon>`}
+                        html`<iconify-icon id='lt-icon' inline icon=${this.leftIcon} style="font-size: 24px;" ></iconify-icon> ${this.buttonText}`:
+                        html`${this.buttonText} <iconify-icon inline id='rt-icon' class="iconify-inline" icon=${this.rightIcon} style="font-size: 24px;"></iconify-icon>`}
             </button>
         
         `

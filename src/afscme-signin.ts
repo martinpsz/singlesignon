@@ -1,23 +1,12 @@
 import { LitElement, html, css} from "lit";
-import {customElement, state} from "lit/decorators.js"
+import {customElement} from "lit/decorators.js"
 import Logo from './static/afscme.svg'
 import './components/afscme-logo.js'
 import './components/Screens/home-screen'
-
+import './components/Screens/email-login'
 
 /**
- *  Sign in option: SSO/Email or Create Account?
- * 
- *  Create Account: 
- *      First, get email + password
- *      Second, verify membership (one of three options) - collect info for option
- *      Member ? Code : call member services
- * 
- *  SSO/Email:
- * 
- *      Exact match for email in system ? 'Signed In' : 
- *      Get 2nd code from Cognito or Create Account steps
- *      
+ *  
  *
  */
 
@@ -48,13 +37,12 @@ export class AFSCMESignin extends LitElement{
                 background-repeat: no-repeat;
                 background-position: top center;
                 background-blend-mode: multiply;
-                
-                
             }
+
             .container{
-                padding: 0 5em 2.5em; 
-                border-radius: 0.5em;
+                border-radius: 0.25em;
             }
+
         }
     
     `
@@ -64,7 +52,7 @@ export class AFSCMESignin extends LitElement{
         return html`
             <div class="container">
                 <afscme-logo imgSrc=${Logo} imgAlt='AFSCME Logo' logoText='Member Portal'></afscme-logo>
-                <home-screen></home-screen>
+               <email-login></email-login>
             </div>
         `
     }

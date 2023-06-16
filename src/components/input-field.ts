@@ -72,7 +72,11 @@ export class InputField extends LitElement{
     protected render(){
         return html`
             <label for=${this.inputId}>${this.fieldLabel}</label>
-            <input name=${this.inputId} id=${this.inputId} type=${this.inputType}/><span></span>
+            <input name=${this.inputId} 
+                   id=${this.inputId} 
+                   type=${this.inputType} 
+                   @change=${e => console.log(e.target.value)}
+            /><span></span>
         `   
     }
 }

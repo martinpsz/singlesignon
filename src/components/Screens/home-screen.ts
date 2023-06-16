@@ -49,7 +49,6 @@ export class HomeScreen extends LitElement{
             #non-sso-links custom-link:nth-of-type(1){
                 margin-bottom: 0;
             }
-
         }
 
     `

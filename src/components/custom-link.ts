@@ -13,6 +13,7 @@ export class CustomLink extends LitElement{
             text-decoration: underline;
             font-family: var(--Poppins);
             color: var(--black);
+            cursor: pointer;
         }
 
         .need-help{

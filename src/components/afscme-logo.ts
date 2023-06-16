@@ -24,9 +24,6 @@ export class AFSCMELogo extends LitElement{
             font-weight: 300;
         }
 
-        @media (min-width: 768px){
-            
-        }
     `
 
     @property()

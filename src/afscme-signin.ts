@@ -69,32 +69,12 @@ export class AFSCMESignin extends LitElement{
      * 2. _signInWith: denotes what log in option the user selected with options defined by the 'SignInOptions' type defined above.
      */
 
-   userLogInFlow(){
-
-        let screen: TemplateResult | undefined = undefined
-        //Step 1: Check whether user is already logged in:
-        if(!this._signedIn){
-
-            //Step 2: User is not signed in. What option are they selecting to log in
-            if(typeof this._signInWith === 'undefined'){
-                screen = html`<home-screen @get_login_option=${(e: CustomEvent) => this._signInWith = e.detail}></home-screen>`
-            } else if (this._signInWith === 'EMAIL'){
-                screen = html`<email-login></email-login>`
-            } else if (this._signInWith === 'CREATE ACCOUNT'){
-                screen = html`<create-account></create-account>`
-            }
-
-        } else {
-            screen = html`<p>You are logged in</p>`
-        }
-   }
-
+   
     protected render(){
-        console.log(this._signInWith)
         return html`
             <div class="container">
                 <afscme-logo imgSrc=${Logo} imgAlt='AFSCME Logo' logoText='Member Portal'></afscme-logo>
-                ${this.userLogInFlow()}
+                <email-login></email-login>
             </div>
         `
     }

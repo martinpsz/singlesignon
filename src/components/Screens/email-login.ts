@@ -11,10 +11,11 @@ import SignInWithEmail from '../../settings.json'
 export class EmailLogin extends LitElement{
     static styles = css`
         :host{
-            padding: 0 1em;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: clamp(17rem, 16.714rem + 1.429vw, 18rem);
+            
         }
 
         section-directions{
@@ -24,6 +25,7 @@ export class EmailLogin extends LitElement{
         form{
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
         form input-field:nth-of-type(1){
@@ -32,7 +34,7 @@ export class EmailLogin extends LitElement{
 
         form custom-link{
             align-self: flex-end;
-            margin-top: 0.25em;
+            //margin-top: 0.25em;
             
         }
 
@@ -45,12 +47,12 @@ export class EmailLogin extends LitElement{
         }
         
         @media (min-width: 768px){
-            :host{
-                padding: 1em;
-            }
+            //:host{
+            //    padding: 1em;
+            //}
+
+            
         }
-    
-    
     `
 
     protected render(){
@@ -59,7 +61,7 @@ export class EmailLogin extends LitElement{
             <section-directions helpText=${helpText}></section-directions>
             <form>
                 <input-field fieldLabel='Email:' inputType='email' inputId='Email'></input-field>
-                <input-field fieldLabel='Password:' inputType='password' inputId='Password'></input-field>
+                <input-field fieldLabel='Password:' inputType='password' inputId='Password' ></input-field>
                 <custom-link linkText='Forgot Password' linkType='need help'></custom-link>
                 <div id='btn-group'>
                     <custom-button leftIcon='carbon:home' buttonText='Home' btnPrimary></custom-button>

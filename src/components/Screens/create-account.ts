@@ -12,8 +12,13 @@ export class CreateAccount extends LitElement{
         :host{
             padding: 1em;
             display: flex;
+            flex-direction: column; 
+            width: calc(100%-2em); 
+        }
+
+        form{
+            display: flex;
             flex-direction: column;
-            
         }
 
         form input-field:nth-of-type(2){
@@ -31,6 +36,10 @@ export class CreateAccount extends LitElement{
             margin: 1em 0;
         }
 
+        #btn-group custom-button:nth-of-type(2){
+            margin-left: 1em;
+        }
+
         #sso-option p{
             font-family: var(--Poppins);
             color: var(--black);
@@ -41,10 +50,10 @@ export class CreateAccount extends LitElement{
             :host{
                 width: 66.7%
             }
-            form{
-                display: flex;
-                flex-direction: column;
-            }
+            
+            #btn-group custom-button:nth-of-type(2){
+            margin-left: 0;
+        }
         }
     
     `

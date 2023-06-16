@@ -9,6 +9,8 @@ export class SectionDirections extends LitElement{
             color: var(--black);
             font-size: var(--font-size-sm);
             margin-top: 1em;
+            padding: 0 1em;
+            
         }
 
         @media (min-width: 768px){

@@ -8,7 +8,7 @@ import ContactServicesSettings from '../../settings.json'
 export class ContactServices extends LitElement{
     static styles = css`
         :host{
-            padding: 1em;
+            //padding: 1em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,7 +35,11 @@ export class ContactServices extends LitElement{
             margin: 1em 0 2em;
         }
 
-        
+        @media (min-width: 768px){
+            custom-button{
+                margin-bottom: 1em;
+            }
+        }
     
     `
     protected render(){

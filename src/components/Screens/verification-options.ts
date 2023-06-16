@@ -9,18 +9,26 @@ import VerificationOpts from '../../settings.json'
 export class VerificationOptions extends LitElement{
     static styles = css`
         :host{
-            padding: 1em;
             display: flex;
             flex-direction: column;
             align-items: center;
+            
         }
 
         custom-link{
             margin: 0.5em
         }
 
+
         custom-button{
             margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        @media (min-width: 768px){
+            custom-link:nth-of-type(1){
+                margin-top: 1.5em;
+            }
         }
     
     `

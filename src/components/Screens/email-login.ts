@@ -14,7 +14,7 @@ export class EmailLogin extends LitElement{
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: clamp(17rem, 16.714rem + 1.429vw, 18rem);
+            //width: clamp(17rem, 16.714rem + 1.429vw, 18rem);
             
         }
 
@@ -25,7 +25,7 @@ export class EmailLogin extends LitElement{
         form{
             display: flex;
             flex-direction: column;
-            width: 100%;
+            
         }
 
         form input-field:nth-of-type(1){
@@ -38,21 +38,20 @@ export class EmailLogin extends LitElement{
             
         }
 
-
         #btn-group{
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 2em 0 3em;
         }
-        
-        @media (min-width: 768px){
-            //:host{
-            //    padding: 1em;
-            //}
 
-            
+        @media (min-width: 768px){
+            custom-link{
+                padding-bottom: 1em;
+            }
         }
+        
+        
     `
 
     protected render(){

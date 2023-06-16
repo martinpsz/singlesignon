@@ -74,7 +74,7 @@ export class AFSCMESignin extends LitElement{
         return html`
             <div class="container">
                 <afscme-logo imgSrc=${Logo} imgAlt='AFSCME Logo' logoText='Member Portal'></afscme-logo>
-                <contact-services></contact-services>
+                <email-login></email-login>
             </div>
         `
     }

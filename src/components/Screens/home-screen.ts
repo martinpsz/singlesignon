@@ -58,7 +58,6 @@ export class HomeScreen extends LitElement{
     LogInOptionSelected!: SignInOptions;
 
     
-
     protected render(){
         return html`
             <p>Sign in with:</p>

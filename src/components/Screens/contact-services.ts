@@ -8,18 +8,21 @@ import ContactServicesSettings from '../../settings.json'
 export class ContactServices extends LitElement{
     static styles = css`
         :host{
-            padding: 1em;
+            padding: 0 1em;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: calc(100%-1em);
+            margin: 1em 0;
+        
         }
 
         a{
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--green);
-            text-decoration-color: var(--green);
+            color: var(--blue);
+            text-decoration-color: var(--blue);
         }
 
         a span{
@@ -45,7 +48,6 @@ export class ContactServices extends LitElement{
             <section-directions helpText=${helpText}></section-directions>
             <a href='tel:'><iconify-icon icon="ph:phone-call-light" style=" font-size: 24px;"></iconify-icon> <span>Call AFSCME<span></a>
             <a href='mailto:'><iconify-icon icon="carbon:email" style=" font-size: 24px;"></iconify-icon> <span>Email AFSCME</span></a>
-            <custom-button buttonText='Home' leftIcon='carbon:home' btnPrimary></custom-button>
 
 
         

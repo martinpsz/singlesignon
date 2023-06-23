@@ -1,5 +1,14 @@
-# My AFSCME Sign In UI Documentation:
+### FUNCTIONS needed:
 
-### Control the copy of the UI:
+1. _ssoSignInHandler(service): 
 
-To update the copy (i.e. button text/icons, links, helpText, app icon, etc.) open the 'settings.json' app and update the file for the screen you are trying to update. 
+    Location: 'afscme-signin.ts'
+    Need: result of sign in process. First time user? Returning user? States: connecting, successful w/result, error 
+
+2. _formSubmissionHandler(email, password):
+
+    Location: 'email-login.ts'
+    Need: result of sign in process. First time user? Returning user? States: connecting, successful w/result, error 
+
+3. 
+

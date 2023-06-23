@@ -5,9 +5,9 @@ import { customElement} from 'lit/decorators.js'
 export class CaptchaField extends LitElement{
     static styles = css`
         .captcha-wrapper{
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            border: 1px solid rgba(13,24,33, 0.25);
+            border: 1px solid rgba(13,24,33, 0.2);
             border-radius: 0.25em;
             padding: 0.5em;
         }
@@ -30,6 +30,8 @@ export class CaptchaField extends LitElement{
             font-size: var(--font-size-sm);
             margin: 0 1.5em 0 0.25em;
         }
+
+        
     
     `
 

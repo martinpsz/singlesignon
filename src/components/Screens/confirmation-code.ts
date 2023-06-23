@@ -10,29 +10,31 @@ import EnterValidationCode from '../../settings.json'
 export class ConfirmationCode extends LitElement{
     static styles = css`
         :host{
-    
-            padding: 2em 0;
+            margin-bottom: 2em;
+            padding: 0 1em;
         }
-        form{
+        
+        div{
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: calc(100% - 1em);
+            border: 1
         }
 
-        form code-fields{
-            margin-top: 3em;
+        div > * {
+            margin-top: 1.5em;
         }
 
-        form custom-link{
+        #resend-code{
             margin-top: 0.25em;
         }
         
-        #btn-group{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-top: 2em;
+
+        custom-button{
+            align-self: flex-end;
         }
+
 
 
     
@@ -43,14 +45,12 @@ export class ConfirmationCode extends LitElement{
 
         return html`
             <section-directions helpText=${helpText}></section-directions>
-            <form>
+            <div id='outer-wrapper'>
                 <code-fields></code-fields>
-                <custom-link linkText='Resend Code' linkType='need-help'></custom-link>
-            </form>
-            <div id="btn-group">
-                <custom-button leftIcon='carbon:home' buttonText='Home' btnPrimary></custom-button>
+                <custom-link linkText='Resend Code' linkType='need-help' id='resend-code'></custom-link>
                 <custom-button rightIcon='carbon:cloud-upload' buttonText='Validate' btnSecondary></custom-button>
             </div>
+          
 
         `
     }

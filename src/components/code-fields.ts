@@ -7,7 +7,7 @@ export class CodeFields extends LitElement{
         input{
             border: none;
             border-bottom: 1px solid var(--black);
-            width: 2em;
+            width: 2.5em;
             font-family: var(--Poppins);
             color: var(--black);
             text-align: center;

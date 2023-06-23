@@ -10,25 +10,28 @@ import '../SSO/sso-list'
 export class CreateAccount extends LitElement{
     static styles = css`
         :host{
-            padding: 1em;
             display: flex;
             flex-direction: column;
-            
+            margin-bottom: 1em;
+            width: 100%;
         }
 
-        form input-field:nth-of-type(2){
-            margin: 1.5em 0;
+        .form-wrapper{
+            width: calc(100% - 2em);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
         }
 
-        form input-field:nth-of-type(3){
-            margin-bottom: 1.5em;
+        .form-wrapper > *{
+            margin-top: 1.5em;
         }
-
+        
         #btn-group{
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 1em 0;
+            margin-top: 1.5em;
         }
 
         #sso-option p{
@@ -38,34 +41,39 @@ export class CreateAccount extends LitElement{
         }
 
         @media (min-width: 768px){
-            :host{
-                width: 66.7%
+            .form-wrapper{
+                width: calc(100% - 4em);
+                margin: 0 auto;
             }
-            form{
-                display: flex;
-                flex-direction: column;
+
+            #btn-group{
+                justify-content: space-evenly;
             }
+            
         }
     
     `
 
     protected render(){
         return html`
-            <form>
+            <div class='form-wrapper'>
                 <input-field fieldLabel="Email:" inputType='email' inputId='email'></input-field>
                 <input-field fieldLabel='Enter new password:' inputType='password' inputId='password'></input-field>
                 <input-field fieldLabel='Re-enter new password:' inputType='password' inputId='password'></input-field>
                 <captcha-field></captcha-field>
                 <div id='btn-group'>
-                    <custom-button leftIcon='carbon:home' buttonText="Home" btnPrimary></custom-button>
+                    <custom-button leftIcon='carbon:home' buttonText="Home" btnPrimary
+                    @click=${()=> {this.dispatchEvent(new CustomEvent('InnerNavigationEvent', 
+                    {detail: 'HOME SCREEN',
+                     composed: true,
+                     bubbles: true}))}}></custom-button>
                     <custom-button rightIcon='carbon:document-signed' btnSecondary buttonText='Create Account'><custom-button>
                 </div>
-            </form>
-            <div id="sso-option">
-                <p>Or sign in with:</p>
-                <sso-list></sso-list>
+                <div id="sso-option">
+                    <p>Or sign in with:</p>
+                    <sso-list></sso-list>
+                </div>
             </div>
-        
         `
     }
 }

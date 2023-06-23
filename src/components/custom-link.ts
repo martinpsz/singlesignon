@@ -13,13 +13,15 @@ export class CustomLink extends LitElement{
             text-decoration: underline;
             font-family: var(--Poppins);
             color: var(--black);
+            cursor: pointer;
         }
 
         .need-help{
             font-size: var(--font-size-sm);
             text-transform: uppercase;
+            cursor: pointer;
         }
-    
+
     `
 
     @property()

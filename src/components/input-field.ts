@@ -1,6 +1,6 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
+import {ifDefined} from 'lit/directives/if-defined.js'
 @customElement('input-field')
 export class InputField extends LitElement{
 
@@ -16,7 +16,6 @@ export class InputField extends LitElement{
             text-transform: uppercase;
             font-size: var(--font-size-sm);
             font-weight: var(--font-weight-light);
-
         }
 
         input{
@@ -26,34 +25,31 @@ export class InputField extends LitElement{
             margin-top: 0.5em;
             font-family: var(--Poppins);
             color: var(--black);
-            
-
         }
 
         input:focus{
             outline: transparent;
         }
 
-        input:not(:focus):invalid{
-            border-bottom-color: var(--red);
-        }
-
         input + span{
             position: relative;
         }
 
-        input:focus:invalid + span:after{
-            content: url('https://api.iconify.design/carbon/warning-alt.svg?color=%23ff331f&height=16');
-            position: absolute;
-            right: 0;
-            bottom: 0;
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
         }
 
-        input:focus:valid + span:after{
-            content: url('https://api.iconify.design/carbon/checkmark-outline.svg?color=%2305ad52&height=16');
-            position: absolute;
-            right: 0;
-            bottom: 0;
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        #error{
+            margin: 0;
+            font-family: var(--Poppins);
+            font-size: var(--font-size-sm);
+            color: var(--red);
         }
     
     `
@@ -67,13 +63,26 @@ export class InputField extends LitElement{
     @property()
     inputId!: string;
 
-
+    @property()
+    error!: string
 
     protected render(){
         return html`
             <label for=${this.inputId}>${this.fieldLabel}</label>
-            <input name=${this.inputId} id=${this.inputId} type=${this.inputType}/><span></span>
+            <input name=${this.inputId} id=${this.inputId} type=${this.inputType} 
+            @change=${(e:InputEvent) => this._setInputValue(e)}/><span></span>
+            ${this.error ? html`<p id='error'>${this.error}</p>` : nothing}
         `   
+    }
+
+    _setInputValue = (e: InputEvent) => {
+        const eventTarget = e.target as HTMLInputElement
+
+        this.dispatchEvent(new CustomEvent('getInputValue', {
+            detail: eventTarget.value,
+            bubbles: true,
+            composed: true
+        }))
     }
 }
 
